@@ -1,0 +1,32 @@
+.message-el{
+    display: flex;
+    padding: 5px 10px;
+}
+.message-el span{
+    padding: 0 10px;
+    color: #0a4b1a;
+    font-size: 16px;
+    font-weight: 700;
+}
+.message-el span:after{
+    content: ':';
+    padding-left: 5px;
+    color: #0a4b1a;
+    font-size: 16px;
+    font-weight: 700;
+}
+.message-el p{
+    padding: 0 10px;
+    font-weight: 300;
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+}
+
+#chat{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 100%;
+    border: 1px solid #000;
+}
