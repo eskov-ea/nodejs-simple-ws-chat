@@ -1,6 +1,7 @@
-import ws, {WebSocketServer} from 'ws';
-import {v4 as uuid} from "uuid";
-import {writeFile, readFileSync, existsSync} from "fs";
+const {WebSocketServer} = require('ws');
+const { v4: uuidv4 }  = require('uuid');
+const {writeFile, readFileSync, existsSync} = require('fs')
+
 const log = existsSync('log') && readFileSync('log', 'utf-8');
 
 const clients = {};
@@ -9,7 +10,7 @@ const messages = log ? JSON.parse(log) : [];
 const wss = new WebSocketServer({port: 8000});
 
 wss.on('connection', (ws) => {
-    const id = uuid();
+    const id = uuidv4();
     clients[id] = ws;
 
     console.log(`New client ${id}`);
